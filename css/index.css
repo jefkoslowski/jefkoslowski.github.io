@@ -1,0 +1,350 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Avenir Next', 'Avenir', 'Helvetica Neue', helvetica, sans-serif;
+  font-size: 14px;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#menu {
+  -moz-osx-font-smoothing: auto;
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(227, 228, 229, 0.1)), transparent;
+  height: 60px;
+  text-align: right;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.08) 0 1px 0;
+}
+
+#menu a {
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 5px;
+  margin: 15px 20px 0 0;
+  transition: all 0.25s linear;
+  display: inline-block;
+}
+
+#menu a.external {
+  border: 1px solid #fff;
+  opacity: 0.9;
+}
+
+#menu a:hover,
+#menu a.external:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#menu a.external:hover {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+header {
+  background: linear-gradient(to bottom right, rgba(41, 36, 132, 0.85), rgba(102, 245, 201, 0.85));
+  height: 400px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-size: 95px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 65px 0 0 0;
+  font-weight: 100;
+  -webkit-animation: fadeindown 2s ease;
+  position: relative;
+}
+
+@-webkit-keyframes fadeindown {
+  from {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+hr {
+  margin: -5px auto;
+  height: 0;
+  border: 0;
+  border-top: 2px solid #fff;
+  opacity: 0.3;
+  width: 70px;
+  padding: 31px 0px 0px 0px;
+}
+
+header h2 {
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  -webkit-animation: fadeinup 2s ease;
+  position: relative;
+}
+
+@-webkit-keyframes fadeinup {
+  from {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#home {
+  overflow: hidden;
+  background: #fff;
+  padding: 65px;
+}
+
+#home p {
+  padding: 15px 100px;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+#home p a.external {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#home p a.external:hover,
+#home p a.external:focus {
+  outline: none;
+}
+
+#home p a.external::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.06);
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  transform: translateY(10px);
+}
+
+#home p a.external:hover::after,
+#home p a.external:focus::after {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+.avatar {
+  border-radius: 50%;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.avatar img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+#timeline {
+  padding: 25px;
+  position: relative;
+  background: radial-gradient(#3f4566,#253444);
+  color: #fff;
+  font-weight: 500;
+}
+
+#timeline h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+#timeline ul {
+  padding: 0 40px;
+  margin: 0 auto;
+  list-style: none;
+  overflow: hidden;
+}
+
+#timeline ul:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  left: 50%;
+  margin-left: -1px;
+  display: block;
+  top: 105px;
+  bottom: 80px;
+  background: #fff;
+}
+
+.pulsate {
+    border: 3px solid #999;
+    -webkit-border-radius: 30px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 50%;
+    top: 92px;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.0;
+    margin-left: -10px;
+}
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+#timeline ul li {
+  clear: both;
+  display: block;
+  width: 100%;
+  position: relative;
+  margin: 40px 0;
+  height: 30px;
+}
+
+#timeline ul li:before {
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0;
+  left: 50%;
+  margin-left: -4px;
+  top: 50%;
+  margin-top: -4px;
+  padding: 4px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+#timeline ul li.start:before {
+  padding: 6px;
+  margin-top: -6px;
+  margin-left: -6px;
+}
+
+#timeline ul li span {
+  position: absolute;
+}
+
+#timeline ul li small {
+  text-align: left;
+  display: block;
+  line-height: 31px;
+  color: #fff;
+  opacity: 0.4;
+  font-weight: 600;
+}
+
+#timeline ul li:nth-child(2n) span {
+  right: 50%;
+  margin-right: 30px;
+}
+
+#timeline ul li:nth-child(2n + 1) span {
+  left: 50%;
+  margin-left: 30px;
+}
+
+#timeline ul li:nth-child(2n + 1) small {
+  margin-left: 50%;
+  padding-left: 30px;
+}
+
+#timeline ul li:nth-child(2n) small {
+  text-align: right;
+  margin-right: 50%;
+  padding-right: 30px;
+}
+
+#timeline ul li:nth-child(2n) span:before,
+#timeline ul li:nth-child(2n) span:after {
+  left: 100%;
+}
+
+#timeline ul li:nth-child(2n + 1) span:before,
+#timeline ul li:nth-child(2n + 1) span:after {
+  right: 100%;
+}
+
+#timeline a {
+  padding: 10px;
+  text-align: center;
+  display: block;
+  margin: 30px auto;
+  width: 160px;
+  opacity: 0.7;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.25s linear;
+}
+
+#timeline a:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+footer {
+  background: #F6F6F6;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+}
+
+footer a {
+  font-size: 25px;
+  margin: 0 10px;
+}
